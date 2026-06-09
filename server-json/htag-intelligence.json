@@ -15,8 +15,8 @@
       "headers": [
         {
           "name": "x-api-key",
-          "description": "HTAG API key provisioned from the Developer Portal (https://developer.htagai.com). OAuth 2.0 is also supported; see https://developer.htagai.com/agents-mcp.",
-          "isRequired": true,
+          "description": "Optional HTAG API key for headless / server-to-server clients, issued from the Developer Portal (https://developer.htagai.com). Interactive MCP clients should use OAuth 2.0, which is discovered from the MCP URL and supports Dynamic Client Registration with authorization-code + PKCE - no API key or pre-created OAuth client required. See https://developer.htagai.com/agents-mcp.",
+          "isRequired": false,
           "isSecret": true
         }
       ]

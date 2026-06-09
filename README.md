@@ -12,7 +12,7 @@ Public metadata for HTAG's Model Context Protocol (MCP) servers. This repository
 
 - **Public-only scope.** This repo documents the three connectors that are safe to expose externally (Intelligence, Spatial, Docs). Internal connectors (Trends, Data Analytics) are intentionally omitted.
 - **No source code.** This is a metadata repository. Server implementations, schemas for every tool, and operational details are not published here.
-- **Auth setup happens elsewhere.** API keys and OAuth 2.0 clients are provisioned via the HTAG Developer Portal - not in this repo and not in MCP client config files committed to source control.
+- **Auth requires no pre-provisioning for interactive clients.** OAuth 2.0 metadata is discovered directly from the MCP URL and supports Dynamic Client Registration with authorization-code + PKCE, so MCP-capable clients can complete sign-in without a pre-created OAuth client or API key. API keys remain an optional alternate for headless use and are issued from the HTAG Developer Portal; never commit them to MCP client config in source control.
 - **Tool counts are current as of publication.** Live tool inventories are authoritative via each server's `tools/list` response and the [API reference](https://developer.htagai.com/api-reference).
 
 ---
@@ -52,8 +52,8 @@ https://api.htagai.com/mcp/v1/servers/htag-docs/mcp
 
 ## Authentication
 
-- **OAuth 2.0** - recommended for end-user / interactive agents. Configure via the [Developer Portal](https://developer.htagai.com).
-- **`x-api-key` header** - for server-to-server / headless agents. Issue keys from the Developer Portal and pass as a request header.
+- **OAuth 2.0** - recommended for end-user / interactive agents. Authorization server metadata is discovered directly from each MCP URL; clients that support Dynamic Client Registration with authorization-code + PKCE can sign the user in without any pre-created OAuth client or API key.
+- **`x-api-key` header** - optional alternate for server-to-server / headless agents. Issue keys from the [Developer Portal](https://developer.htagai.com) and pass as a request header.
 - **Public** - HTAG Docs requires no credentials.
 
 Never commit API keys to client config files in source control. Store them in your client's secrets store or environment variables.
