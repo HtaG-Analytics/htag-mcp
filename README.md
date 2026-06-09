@@ -1,6 +1,6 @@
 # HTAG Property Intelligence MCP
 
-Public metadata for HTAG's Model Context Protocol (MCP) servers. This repository describes the publicly available HTAG MCP connectors so they can be discovered, evaluated, and configured by AI clients, MCP directories, and integration partners.
+Public metadata for HTAG's Model Context Protocol (MCP) servers. This repository describes the publicly available HTAG MCP connectors - **70+ read-only public tools** across three connectors - so they can be discovered, evaluated, and configured by AI clients, MCP directories, and integration partners.
 
 <p align="left">
   <img src="assets/htag_logo_blue.svg" alt="HTAG" height="48" />

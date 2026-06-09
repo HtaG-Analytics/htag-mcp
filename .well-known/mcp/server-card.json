@@ -1,7 +1,7 @@
 {
   "name": "HTAG Property Intelligence MCP",
   "publisher": "HTAG Analytics",
-  "description": "Public HTAG MCP connectors for property intelligence, H3 spatial intelligence, and capability discovery. All tools are read-only and served over Streamable HTTP.",
+  "description": "Public HTAG MCP connectors for property intelligence, H3 spatial intelligence, and capability discovery - 70+ read-only public tools across three connectors, served over Streamable HTTP.",
   "websiteUrl": "https://developer.htagai.com",
   "documentationUrl": "https://developer.htagai.com/agents-mcp",
   "apiReferenceUrl": "https://developer.htagai.com/api-reference",
