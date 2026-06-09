@@ -1,0 +1,27 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Node / build artifacts (in case of tooling)
+node_modules/
+dist/
+build/
+
+# Python (in case of tooling)
+__pycache__/
+*.pyc
+.venv/
+venv/

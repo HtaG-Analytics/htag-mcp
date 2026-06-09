@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.htagai/htag-docs",
+  "description": "Public HTAG discovery for MCP tools, API endpoints, OpenAPI ops, and agents.",
+  "version": "1.0.0",
+  "websiteUrl": "https://developer.htagai.com",
+  "repository": {
+    "url": "https://github.com/HtaG-Analytics/htag-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.htagai.com/mcp/v1/servers/htag-docs/mcp"
+    }
+  ]
+}
