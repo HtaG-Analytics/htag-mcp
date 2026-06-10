@@ -1,6 +1,8 @@
 # HTAG Property Intelligence MCP
 
-Public metadata for HTAG's Model Context Protocol (MCP) servers. This repository describes the publicly available HTAG MCP connectors - **70+ read-only public tools** across three connectors - so they can be discovered, evaluated, and configured by AI clients, MCP directories, and integration partners.
+HTAG Property Intelligence MCP gives AI agents read-only access to Australian property intelligence: address standardisation, property summaries and estimates, sold/rented listing search, suburb/LGA market metrics, demographics, economics, geographic concordance, and H3 spatial layers.
+
+This repository publishes the metadata for HTAG's public Model Context Protocol (MCP) servers - **70+ read-only public tools** across three connectors - so they can be discovered, evaluated, and configured by AI clients, MCP directories, and integration partners.
 
 <p align="left">
   <img src="assets/htag_logo_blue.svg" alt="HTAG" height="48" />
@@ -8,12 +10,14 @@ Public metadata for HTAG's Model Context Protocol (MCP) servers. This repository
 
 ---
 
-## Assumptions & Gaps
+## What agents can do with this
 
-- **Public-only scope.** This repo documents the three connectors that are safe to expose externally (Intelligence, Spatial, Docs). Internal connectors (Trends, Data Analytics) are intentionally omitted.
-- **No source code.** This is a metadata repository. Server implementations, schemas for every tool, and operational details are not published here.
-- **Auth requires no pre-provisioning for interactive clients.** OAuth 2.0 metadata is discovered directly from the MCP URL and supports Dynamic Client Registration with authorization-code + PKCE, so MCP-capable clients can complete sign-in without a pre-created OAuth client or API key. API keys remain an optional alternate for headless use and are issued from the HTAG Developer Portal; never commit them to MCP client config in source control.
-- **Tool counts are current as of publication.** Live tool inventories are authoritative via each server's `tools/list` response and the [API reference](https://developer.htagai.com/api-reference).
+- **Standardise and enrich an address.** Resolve free-text Australian addresses to canonical form, then pull property summary, demographics, and environment for that location.
+- **Estimate value and rent.** Get current price and rent estimates for a property, plus market context (growth, scores, trends) for its suburb or LGA.
+- **Search comparable sales and rentals.** Query sold and rented listings filtered by location, attributes, and time window to support comps and rental benchmarking.
+- **Profile a suburb, LGA, or postcode.** Combine market metrics, demographics, census medians, and economic indicators (CPI, cash rate) for a single locality view.
+- **Reason over spatial layers.** Pull H3 hex-indexed price/rent/yield surfaces, socio-environmental indicators, and risk layers; convert between H3 cells and administrative boundaries.
+- **Discover capabilities at runtime.** List available MCP servers, tools, REST endpoints, and micro-agents via the public Docs connector - no credentials required.
 
 ---
 
@@ -60,18 +64,21 @@ Never commit API keys to client config files in source control. Store them in yo
 
 ---
 
-## Data Handling
+## Scope & Security
 
-- All connectors are **read-only**. No HTAG data is mutated by these MCP servers.
-- Requests and responses traverse HTTPS only.
-- API keys identify the caller for rate limiting, quota, and audit; rotate keys via the Developer Portal.
-- For terms covering acceptable use, data retention, and redistribution of property data, see the Developer Portal.
+- **Public-only scope.** This repo documents the three connectors that are safe to expose externally (Intelligence, Spatial, Docs). Internal / non-public connectors are intentionally omitted from this listing.
+- **Read-only.** All connectors are read-only; no HTAG data is mutated by these MCP servers.
+- **HTTPS only.** Requests and responses traverse HTTPS only.
+- **No pre-provisioning for interactive clients.** OAuth 2.0 metadata is discovered directly from the MCP URL and supports Dynamic Client Registration with authorization-code + PKCE, so MCP-capable clients can complete sign-in without a pre-created OAuth client or API key. API keys remain an optional alternate for headless use and are issued from the HTAG Developer Portal; never commit them to MCP client config in source control.
+- **Metadata only.** This is a metadata repository - no server source code, per-tool schemas, or operational details are published here. Live tool inventories are authoritative via each server's `tools/list` response and the [API reference](https://developer.htagai.com/api-reference).
+- **Identity and audit.** API keys identify the caller for rate limiting, quota, and audit; rotate keys via the Developer Portal.
+- **Terms.** For acceptable use, data retention, and redistribution of property data, see the Developer Portal.
 
 ---
 
 ## Not Included in This Public Listing
 
-- **HTAG Trends** and **HTAG Data Analytics** are internal connectors and are not part of this public MCP listing.
+- Internal / non-public HTAG connectors.
 - Per-tool input/output schemas - see live `tools/list` responses or the [API reference](https://developer.htagai.com/api-reference).
 - Internal routing, infrastructure, and implementation details.
 
@@ -82,7 +89,7 @@ Never commit API keys to client config files in source control. Store them in yo
 - Developer Portal - https://developer.htagai.com
 - MCP setup hub - https://developer.htagai.com/agents-mcp
 - API reference - https://developer.htagai.com/api-reference
-- Support - copilot@htag.com.au
+- Support - [copilot@htag.com.au](mailto:copilot@htag.com.au)
 - Security disclosures - see [SECURITY.md](SECURITY.md)
 
 ---

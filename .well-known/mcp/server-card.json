@@ -1,7 +1,7 @@
 {
   "name": "HTAG Property Intelligence MCP",
   "publisher": "HTAG Analytics",
-  "description": "Public HTAG MCP connectors for property intelligence, H3 spatial intelligence, and capability discovery - 70+ read-only public tools across three connectors, served over Streamable HTTP.",
+  "description": "Read-only Australian property intelligence for AI agents: address standardisation, property summaries and estimates, sold/rented listing search, suburb/LGA market metrics, demographics, economics, geographic concordance, and H3 spatial layers - 70+ public tools across three connectors, served over Streamable HTTP.",
   "websiteUrl": "https://developer.htagai.com",
   "documentationUrl": "https://developer.htagai.com/agents-mcp",
   "apiReferenceUrl": "https://developer.htagai.com/api-reference",
@@ -99,6 +99,6 @@
     }
   ],
   "notIncluded": [
-    "HTAG Trends and HTAG Data Analytics are internal connectors and are not part of this public MCP listing."
+    "Internal / non-public HTAG connectors are intentionally omitted from this public MCP listing."
   ]
 }
