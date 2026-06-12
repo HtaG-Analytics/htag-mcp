@@ -24,7 +24,7 @@
         "resources": false,
         "prompts": false,
         "toolsReadOnly": true,
-        "toolCount": 59
+        "toolCount": 60
       },
       "toolSummary": "Address standardisation, property summaries and price/rent estimates, sold and rented listing search, suburb/LGA market metrics and trends, demographics, economic indicators, and geographic concordance (postcode, suburb, LGA, SA codes). See live tools/list or the API reference for the authoritative inventory.",
       "representativeTools": [
